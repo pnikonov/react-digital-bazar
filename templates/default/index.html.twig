@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DefaultController!{% endblock %}
+
+{% block body %}
+    <div class="activation">
+        <div class="container">
+            <div class="activation-body">
+                <div class="activation-logo">
+                    <img src="img/logo.svg" alt="">
+                </div>
+                <div class="activation-title">Активация сервисного<br> пакета ORACLE</div>
+                <div class="activation-inputs">
+                    <div class="activation-input-block">
+                        <div class="activation-input-title">Введите код активации полученный на чеке или в СМС</div>
+                        <div class="activation-input-wrapp">
+                            <ul class="activation-inputs-list">
+                                <li>
+                                    <label class="input-block">
+                                        <input type="text" class="input" placeholder="___">
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="input-block">
+                                        <input type="text" class="input" placeholder="___">
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="input-block">
+                                        <input type="text" class="input" placeholder="___">
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="input-block">
+                                        <input type="text" class="input" placeholder="___">
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="activation-input-block">
+                        <div class="activation-input-title">Ваш номер телефона</div>
+                        <div class="activation-input-wrapp">
+                            <label class="input-block">
+                                <input type="tel" class="input" placeholder="+7 (___) - ___ -  ____">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="activation-submit-block">
+                        <button class="btn">Активировать</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
