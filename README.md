@@ -3,6 +3,7 @@
 Установка:
 ```
 git clone git@github.com:pnikonov/react-test.git
+cd ./react-test
 composer install
 yarn
 yarn run encore production
