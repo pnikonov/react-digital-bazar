@@ -2,7 +2,7 @@
 
 Установка:
 ```
-git clone git@github.com:pnikonov/react-test.git
+git clone git@github.com:pnikonov/react-digital-bazar.git
 cd ./react-test
 composer install
 yarn
