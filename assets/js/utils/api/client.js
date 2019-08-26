@@ -1,13 +1,10 @@
 import superagent from 'superagent';
 import Cookies from 'js-cookie'
 
-var ClientApi =  class ClientApi {
+const ClientApi =  class ClientApi {
     constructor() {
         this.url = '/';
-    }
-
-    setApiKey(key) {
-        Cookies.set('token', key);
+        this.tokenHeaderKey = 'auth_token';
     }
 
     async checkToken(token) {
@@ -15,7 +12,7 @@ var ClientApi =  class ClientApi {
 
         try {
             let data = await superagent.post('/checkToken')
-                .set('auth_token', token)
+                .set(this.tokenHeaderKey, token)
                 .ok(res => res.status < 500);
 
             if (data.status != 403) {
@@ -47,13 +44,17 @@ var ClientApi =  class ClientApi {
     }
 
     async products() {
-        let result = {};
+        let result = {
+            needAuth: false
+        };
 
         try {
             let data = await superagent.get(this.url + 'products')
-                .set('auth_token', Cookies.get('token'))
+                .set(this.tokenHeaderKey, Cookies.get('token'))
                 .ok(res => res.status < 500);
-
+            if (data.status == 403) {
+                result.needAuth = true;
+            }
             result = data.body.data;
         } catch (e) {
             console.log(e);

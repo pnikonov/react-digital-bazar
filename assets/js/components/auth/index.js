@@ -7,7 +7,6 @@ class Auth extends React.Component {
             code: value.code.join(''),
             phone: value.phone,
         };
-        console.log(result);
         this.props.login(result);
     }
 

@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends AbstractController
 {
-    protected $authTestKey = '123-123-1234';
+    protected $authTestKey = 'fe1bae27cb7c1fb823f496f286e78f1d2ae87734';
     /**
      * @Route("/", name="main")
      */

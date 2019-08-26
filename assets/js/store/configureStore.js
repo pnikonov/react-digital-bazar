@@ -6,4 +6,8 @@ import ClientApi from '../utils/api/client';
 
 const api = new ClientApi();
 
-export const store = createStore(rootReducer, applyMiddleware(thunk.withExtraArgument(api), logger));
+const middleware = process.env.NODE_ENV == 'production'
+    ? applyMiddleware(thunk.withExtraArgument(api))
+    : applyMiddleware(thunk.withExtraArgument(api), logger);
+
+export const store = createStore(rootReducer, middleware);
