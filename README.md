@@ -3,7 +3,7 @@
 Установка:
 ```
 git clone git@github.com:pnikonov/react-digital-bazar.git
-cd ./react-test
+cd ./react-digital-bazar
 composer install
 yarn
 yarn run encore production
